@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hot-top5"
+version = "0.1.0"
+description = "获取抖音热榜与 B 站全站排行榜 Top 5 的命令行工具 / CLI for today's Douyin hot chart and Bilibili ranking top 5"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "aoyexiaoqi"}]
+requires-python = ">=3.9"
+dependencies = []
+keywords = ["douyin", "bilibili", "hot", "ranking", "trending", "cli"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+  "Natural Language :: Chinese (Simplified)",
+  "Topic :: Internet",
+  "Topic :: Utilities",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "pytest-cov"]
+
+[project.scripts]
+hot-top5 = "hot_top5.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/aoyexiaoqi/hot-top5"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
